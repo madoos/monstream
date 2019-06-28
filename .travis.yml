@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - v10.15.3
+  - v12
+  - v10
+  - v8
+  - v6
+  - v4
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+after_script: cat ./coverage/lcov.info | coveralls
