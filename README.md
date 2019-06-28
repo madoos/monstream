@@ -11,8 +11,6 @@ $ npm install --save monstream
 
 ```js
 const monstream = require('monstream');
-
-monstream('Rainbow');
 ```
 ## License
 
